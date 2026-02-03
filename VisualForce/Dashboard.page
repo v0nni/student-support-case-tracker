@@ -1,0 +1,14 @@
+<apex:page controller="StudentSupportController">
+    <apex:pageBlock title="Open Support Cases">
+        <apex:pageBlockTable value="{!openCases}" var="c">
+            <apex:column value="{!c.Student_Legal_Name__c}" headerValue="Student Name"/>
+            <apex:column value="{!c.Grade__c}" headerValue="Grade"/>
+            <apex:column value="{!c.Support_Type__c}" headerValue="Support Type"/>
+            <apex:column value="{!c.Priority__c}" headerValue="Priority"/>
+            <apex:column value="{!c.Status__c}" headerValue="Status"/>
+            <apex:column headerValue="Record">
+                <apex:outputLink value="/{!c.Id}">View</apex:outputLink>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
